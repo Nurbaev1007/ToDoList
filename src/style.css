@@ -31,6 +31,30 @@
     font-style: normal;
 }
 
+.form-check-input.is-valid:checked{
+    background-color: blue!important;
+}
+
+.popup__title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px;
+}
+.popup__title-btn{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup__title-input {
+    width: 100%;
+    border: 1px solid grey;
+    height: 50px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+
 @media (max-width: 425px) {
     .App {
         padding-top: 50px;
