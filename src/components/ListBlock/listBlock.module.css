@@ -1,49 +1,45 @@
-.list {
+
+.list{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
 }
 
-.item {
+.item{
     display: flex;
     column-gap: 50px;
-    cursor: pointer;
-    transition: .2s;
-}
-.item:hover {
-    background-color: #939CB030;
-    transition: .2s;
 }
 
-.itemLeft {
+.itemLeft{
     width: calc(60% - 25px);
 }
 
-.itemRight {
+.itemRight{
     width: calc(40% - 25px);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.priority {
+.priority{
     display: flex;
     column-gap: 10px;
     align-items: center;
 }
 
-.priorityCircle {
+.priorityCircle{
     width: 10px;
     height: 10px;
     border-radius: 50%;
 }
 
-.date {
+.date{
     display: flex;
     align-items: center;
     column-gap: 15px;
 }
-.dateIcon {
+
+.dateIcon{
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -51,27 +47,31 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background: transparent;
     transition: .4s;
+
 }
-.dateIcon:hover {
+
+.dateIcon:hover{
     transition: .4s;
     background: #2E3035;
 }
-
-.dateIcon svg {
+.dateIcon svg{
     transition: .4s;
 }
-.dateIcon:hover svg {
+.dateIcon:hover svg{
     transition: .4s;
     fill: white;
 }
 
-.action {
+.action{
+
     display: flex;
     column-gap: 15px;
     align-items: center;
 }
-.actionDelete {
+
+.actionDelete{
     font-size: 22px;
     cursor: pointer;
 }
@@ -80,8 +80,24 @@
 
 
 
+@media (max-width: 768px) {
+    .item {
+        column-gap: 30px;
+    }
 
+}
 
+@media (max-width: 576px) {
+    .item {
+        flex-wrap: wrap;
+    }
+    .itemLeft {
+        width: 100%;
+    }
+    .itemRight {
+        width: 100%;
+    }
+}
 
 @media (max-width: 425px) {
     .item {
@@ -95,26 +111,26 @@
         width: 100%;
     }
 
-    /*.priority {*/
-    /*    column-gap: 5px;*/
-    /*}*/
-    /*.priorityCircle {*/
-    /*    width: 7px;*/
-    /*    height: 7px;*/
-    /*}*/
-    /*.date {*/
-    /*    column-gap: 7px;*/
-    /*}*/
-    /*.dateIcon {*/
-    /*    width: 25px;*/
-    /*    height: 25px;*/
-    /*}*/
-    /*.action {*/
-    /*    column-gap: 10px;*/
-    /*}*/
-    /*.actionDelete {*/
-    /*    font-size: 15px;*/
-    /*}*/
+    .priority {
+        column-gap: 5px;
+    }
+    .priorityCircle {
+        width: 7px;
+        height: 7px;
+    }
+    .date {
+        column-gap: 7px;
+    }
+    .dateIcon {
+        width: 25px;
+        height: 25px;
+    }
+    .action {
+        column-gap: 10px;
+    }
+    .actionDelete {
+        font-size: 15px;
+    }
     .title {
         font-size: 15px;
     }

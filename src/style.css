@@ -1,52 +1,62 @@
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: Montserrat, sans-serif;
 }
 
-.container {
+
+.container{
     max-width: 1240px;
     padding: 0 20px;
     margin: 0 auto;
     width: 100%;
 }
 
-.App {
+.App{
     background: #2E3035;
     min-height: 100vh;
     padding-top: 120px;
 }
 
-.App__content {
+.App__content{
     background: white;
     padding: 20px;
     border-radius: 10px;
 }
 
-.App__clear {
-    cursor: pointer;
-    font-style: normal;
+.App__title {
+    font-size: 22px;
 }
 
 .form-check-input.is-valid:checked{
     background-color: blue!important;
 }
+.todo__item{
+    background: transparent;
+    transition: .2s;
+}
+.todo__item:hover{
+    transition: .2s;
+    background: #939CB030;
+}
 
-.popup__title-block {
+.popup__title-block{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 0 20px;
 }
+
+.popup__title{
+
+}
 .popup__title-btn{
     font-size: 20px;
     cursor: pointer;
+
 }
 
-.popup__title-input {
+.popup__title-input{
     width: 100%;
     border: 1px solid grey;
     height: 50px;
@@ -54,9 +64,22 @@
     padding-left: 10px;
 }
 
+.tags__popup{
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid grey;
+    position: absolute;
+    background: white;
+    right: 100px;
+    bottom: 0;
+    transform: translateY(100%);
+    z-index: 5;
+}
 
-@media (max-width: 425px) {
-    .App {
-        padding-top: 50px;
-    }
+.tags__popup-top{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
 }

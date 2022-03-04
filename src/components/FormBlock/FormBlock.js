@@ -1,66 +1,66 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {InputGroup, FormControl, Button} from "react-bootstrap";
-import {v4 as uuid4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
-const FormBlock = ({tasks, setTasks, change, setChange}) => {
+const FormBlock = ({tasks, setTasks}) => {
+
+    const [title, setTitle] = useState('');
 
     const toDate = (date) => {
         return new Intl.DateTimeFormat('en-En', {
             day:'2-digit',
-            month:'short'
+            month:'short',
         }).format(new Date(date))
     };
 
-    const addTask = () => {
-        if (change.trim().length) {
-            setTasks([...tasks, {
-                id: uuid4(),
-                title: change,
-                date: toDate(new Date()),
-                priority: 'None',
-                success: false,
-                pending: true,
-                Tags: [],
-                description: ''
-            }]);
-            setChange('')
-        }
-    };
 
     const addTask2 = (e) => {
-        if (e.key === 'Enter' &&  change.trim().length){
+        if (e.key === 'Enter' && title.trim().length) {
             setTasks([...tasks, {
-                id: uuid4(),
-                title: change,
-                date: toDate(new Date()),
+                id: uuidv4(),
+                title : title,
+                date: toDate(new Date()) ,
                 priority: 'None',
                 success: false,
-                pending: true,
-                Tags: [],
+                pending: true ,
+                tags: [],
                 description: ''
             }]);
-            setChange('')
+            setTitle('')
         }
     };
 
+    const addTask = () => {
 
-    function handleChange(event) {
-        setChange(event.target.value)
-    }
+        if (title.trim().length){
+            setTasks([...tasks, {
+                id: uuidv4(),
+                title : title,
+                date: toDate(new Date()) ,
+                priority: 'None',
+                success: false,
+                pending: true ,
+                tags: [],
+                description: ''
+            }]);
+            setTitle('')
+        }
+
+    };
 
     return (
         <>
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3" style={{width: '93%', marginLeft: '30px'}}>
                 <FormControl
                     onKeyPress={addTask2}
-                    placeholder="Enter new To Do"
-                    aria-label="Enter new To Do"
+                    value={title}
+                    placeholder="Enter new Todo"
+                    aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
-                    value={change}
-                    onChange={handleChange}
+                    onChange={(e) => setTitle(e.target.value)}
                 />
                 <Button variant="outline-secondary" id="button-addon2" onClick={() => addTask()}>
-                    Add
+                    Button
                 </Button>
             </InputGroup>
         </>
