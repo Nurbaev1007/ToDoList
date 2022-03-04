@@ -100,6 +100,9 @@
 }
 
 @media (max-width: 425px) {
+    .list {
+        padding-left: 18px;
+    }
     .item {
         column-gap: 20px;
         flex-direction: column;

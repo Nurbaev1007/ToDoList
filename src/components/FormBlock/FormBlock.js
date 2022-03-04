@@ -50,7 +50,7 @@ const FormBlock = ({tasks, setTasks}) => {
 
     return (
         <>
-            <InputGroup className="mb-3" style={{width: '93%', marginLeft: '30px'}}>
+            <InputGroup className="mb-3" style={{width: '93%', marginLeft: '18px'}}>
                 <FormControl
                     onKeyPress={addTask2}
                     value={title}
